@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+     <!--head 태그 : html 문서를 정의하는 태그 
+     문서의 제목, 스타일시트(CSS),(자바)스크립트(JS),메타데이터(문서 정보)-->
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>04_표관련태그</title>
+
+    <!--HTML 문서의 스타일(크기, 모양, 색상 등)을 지정하는 태그 : <Style>라고하고 == CSS 영역 이라고함-->
+    <!--이 파일 안에서만 적용됨-->
+    <!--style 안에서는 CSS 코드만 적용됨-->
+        <style>
+            .tb{
+                border: 2px solid black;
+                border-collapse : collapse;
+                /* CSS 주석*/
+                /*border-collapse : 테이블의 셀의 경계를 어떻게 화면에 출력할지 결정함
+                    separate : 기본값, 셀의 경계가 따로 분리되어 출력됨
+                    collapse: 모든 셀의 경계가 하나로 합쳐져서 출력됨
+                */
+            }
+
+            .tb th, .tb td{
+                border : 2px solid black;
+            }
+
+            .tb thead{
+                background-color: aquamarine;
+            }
+            .tb tbody{
+                background-color: yellow;
+            }
+            .tb tfoot{
+                background-color: tomato;
+                color : darkcyan ;
+            }
+        </style>
+        <!--tb라는 클래스 속성값을 설정해준 것
+            .(점)은 클래스 선택자 : tb라는 클래스를 가진 것을 나타내는 것
+        -->
+        <!--테두리, 2픽셀, 실선, 검은색 이라는 속성을 준 것-->
+        <!--tb의 자식(티헤드,티바디,티헤드가 이 경우엔 해당)-->
+        <!--tb의 후손(tr등)-->
+        <!--tb 클래스중 (스페이스)th는 th를 갖는 모든 후손,(스페이스)td는 td를 갖는 모든 후손을 의미-->
+    </head>
+
+    <body>
+        <h1>표 관련 태그</h1>
+
+        <pre>
+<h3>table 태그</h3>
+- 웹 문서에서 자료 정리를 위해 주로 사용하는 태그
+- 행과 열로 이루어져 있으며, 행과 열이 교차하는 지점을 셀(cell)이라고 함 
+
+-table 태그는 테이블을 나타내는 행과 열이 작성될 수 있는 영역을 지정함(단독시행이 불가하다는 것)
+        </pre>
+
+        <pre>
+<h3>tr 태그</h3>
+- Table Row의 약자로 한 행을 나타내는 태그
+        </pre>
+
+        <pre>
+<h3>td 태그</h3>
+- Table data의 약자로 한행의 한 칼럼(==셀)을 나타내는 태그
+        </pre>
+
+        <pre>
+<h3>th 태그</h3>
+- Table header 약자로 컬럼명을 표시하는 용도의 태그
+- 기본성질은 td 태그와 같으나, 추가적으로 굵은 글씨,가운데 정렬이 이루어진다
+<!--행(tr),열(th,td)가 있어야 표가 시작이되는 것-->
+        </pre>
+
+        <hr>
+        <!--border 속성
+            table태그와 내부에 작성되는
+            td,th 태그에 검정 테두리를 추가
+
+            지정된 속성값에 따라 테두리 굵기(px)지정
+        -->
+        <table border="10">
+            <tr><!--1행-->
+                <th>브라우저</th><!--1행 1열-->
+                <th>제조사</th><!--1행 2열-->
+                <th>제조사 홈페이지</th><!--1행 3열-->
+            </tr>
+
+            <tr><!--2행-->
+                <td>Chrome</td><!--2행 1열-->
+                <td>Google</td><!--2행 2열-->
+                <td>www.google.com</td><!--2행 3열-->
+            </tr>
+            <tr><!--3행-->
+                <td>Edge</td><!--3행 1열-->
+                <td>MS</td><!--3행 2열-->
+                <td>www.microsoft.com</td><!--3행 3열-->
+            </tr>
+            <tr><!--4행-->
+                <td>Safari</td><!--4행 1열-->
+                <td>Apple</td><!--4행 2열-->
+                <td>www.apple.com</td><!--4행 3열-->
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>행 병합(rowspan),열 병합(colspan) 속성</h2>
+
+        <pre>
+*td/th 태그에만 작성 가능한 속성! 
+
+행병합(rowspan):상하 병합
+열병합(colspan):좌우 병합
+
+너비 부여:width(px)
+높이 부여:height(px)
+
+행이나 열병합 된 곳에 너비,높이를 부여하면 다른줄에 병합 안된 칸들은 그 넓이를 절반씩 가져가거나 분배해서 Auto 처리됨
+        </pre>
+
+        <table border="1">
+            <tr><!--1행-->
+                <th width="70px" >이름</th>
+                <td width="210px"></td>
+                <th width="140px" height="140px" rowspan="2">사진</th>
+            </tr>
+
+            <tr><!--2행-->
+                <th>연락처</th>
+                <td>010-1111-1111</td>
+            </tr>
+            
+            <tr><!--3행-->
+                <th height="35px">주소</th>
+                <td colspan="2"></td>
+            </tr>
+            
+            <tr><!--4행-->
+                <th height="140px">자기소개</th>
+                <td colspan="2"></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>테이블 구조 설정 태그</h2>
+
+        <pre>
+thead : 테이블의 상단 부분 영역(컬럼명)
+tbody : 테이블의 중단 부분 영역(실제 값, 내용)
+tfoot : 테이블의 하단 부분 영역(합계)
+-이렇게 태그를 줘서 나누면 구간별 채색 주거나 하는게 용이함,스타일을 일관적으로 주고싶은 경우    
+        </pre>
+
+        <table class="tb">
+            <thead><!--머리-->
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+
+
+            <tbody><!--몸통-->
+                <tr><!--1행-->
+                    <td>홍길동</td>
+                    <td>20</td>
+                    <td>서울시 쌍문동</td>
+                </tr>
+                <tr><!--2행-->
+                    <td>김유정</td>
+                    <td>25</td>
+                    <td>서울시 강북구</td>
+                </tr>
+                <tr><!--3행-->
+                    <td>박철수</td>
+                    <td>40</td>
+                    <td>서울시 성동구</td>
+                </tr>
+            </tbody>
+
+
+            <tfoot><!--하체-->
+                <tr>
+                    <th colspan="2">총인원</th>
+                    <td >3명</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </body>
+</html>

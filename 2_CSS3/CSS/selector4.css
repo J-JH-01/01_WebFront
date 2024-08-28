@@ -1,0 +1,103 @@
+/* 클론 코딩(사이트 따라하기) 하면서 연습좀 해보기*/
+/* 일반 구조 선택자 */
+
+/* : first-child
+        형제 관계의 요소 중 첫번째 요소
+*/
+
+#test1 > p:first-child/*첫번째 자식이 p인가를 보는거, pre로 바꾸면 첫번째는 아니니까 선택이 안댐*/{
+    background-color: red;
+    color: white;
+}
+
+#test1 > p:last-child/*마지막 자식이 p인가를 보는거, 마지막거는 pre 이기 떄문에 스타일 적용 안댐 */{
+    background-color: orange;
+}
+
+/* nth-child(수열) :
+    형제 관계 요소 중 지정된 수열번째 요소를 모두 선택
+    - 순서 따질때 1 부터 시작
+    
+*/
+
+#test1 > p:nth-child(2)/*test1의 자식 요소 중 2번째 요소를 선택하고, 선택된게 p태그인지 검사*/{
+    background-color: yellow;
+}
+
+/*  홀수 번째 요소를 선택
+    홀수 번째 요소들을 하나하나 검사해서 해당되는거만 스타일 적용
+*/
+#test1 > p:nth-child(2n-1){
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#test1 > p:nth-child(2n){
+    border: 3px solid black;
+    
+}
+
+/*
+    nth-last-child(수열)
+    형제 관계 요소 중, 뒤에서부터 지정된 수열 번째 요소를 모두 선택
+
+    #test2의 자식들 중 p태그들을 고른 후 그 중 첫번째 요소를 선택한다
+*/
+
+#test1 > p:nth-last-child(2){
+    color: pink;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 형태 구조 선택자 */
+
+/* :first-of-type
+    같이 선택된 형제들 중에서 첫번째 요소
+*/
+
+#test2 > p:first-of-type/*p타입 중에서 제일 첫번째 인거*/{
+    background-color: orange;
+}
+
+/* :last-of-type
+    같이 선택된 형제들 중에서 마지막 요소
+*/
+
+#test2 > p:last-of-type{
+    background-color: skyblue;
+}
+
+/* :nth-of-type(수열)
+    같이 선택된 형제들 중에서 수열번쨰의 모든 요소
+*/
+
+#test2 > p:nth-of-type(2n-1)/*p태그들중에서 홀수번쨰들*/{
+    font-size: 30px;
+}
+
+/* :nth-last-of-type(수열)
+    같이 선택된 형제들 중에서 뒤에서 수열번쨰의 모든 요소
+*/
+
+#test2 > p:nth-last-of-type(5n-1){
+    background-color: red;
+}
+
+/* 부정 선택자
+
+question) #test3 자식 li요소 중 3의 배수를 제외한 요소만을 선택
+*/
+
+#test3 > li:not(:nth-of-type(3n)){
+    background-color: khaki;
+}
+

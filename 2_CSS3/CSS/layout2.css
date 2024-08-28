@@ -1,0 +1,80 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+}
+
+/* content 영역 */
+.content {
+    width: 150px;
+    height: 150px;
+}
+
+/* width / height 속성은 기본적으로 content 영역의 크기를 지정하는 속성 */
+
+
+/* border 영역 */
+.border{
+    border: 10px solid lightblue;
+}
+
+/* padding 영역 */
+
+.padding {
+    padding: 30px;
+}
+
+/* margin 영역 */
+
+.margin {
+    margin: 50px;
+}
+/* 
+서로 다른 요소의 margin 겹칠 경우 더 큰 margin을 가진 요소의 값을 따른다*/
+
+#m1{
+    margin: 100px;
+}
+
+.padding-test{
+    /* padding-top: 20px; 
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 100px; */
+
+    /* padding / margin 속성
+        : 작성법에 따라서 padding / margin 특정 방향에 크기를 지정할 수 있다.
+
+        1개 : 상하좌우
+        2개 : 상하(첫번째 숫자) 좌우(두번째 숫자)
+        3개 : 상(첫번째 숫자) 좌우(두번째 숫자) 하(세번쨰 숫자)
+        4개 : 상(첫번째 숫자) 좌(두번째 숫자) 하(세번쨰 숫자) 우(네번째 숫자) -> 시계방향\
+        이거 많이 쓰니까 기억해두면 편함
+    */
+    padding: 30px 100px 400px 1000px;
+}
+
+/* border(속성이 padding/margin과 조금 다름 */
+.border-test{
+    /*border: 1px 2px 3px 4px solid red;*/
+    /* border 속성은 상하좌우 방향을 각각 별도로 지정할 수 없음
+       값 1개만 작성 가능한데 상하좌우 전부 작용
+    */
+    border-top: 3px solid black;
+    border-bottom: 5px dashed magenta;
+    border-left: 10px dotted blue;
+    border-right: 10px double orange ;
+    /* 이렇게 따로 적용시키는거는 적용이된다 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
